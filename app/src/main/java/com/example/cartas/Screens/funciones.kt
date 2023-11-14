@@ -2,6 +2,7 @@ package com.example.cartas.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +20,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.layout.ContentScale
+import com.example.cartas.R
 import com.example.cartas.Screens.Baraja.Companion.obtenerNombreRecurso
 
 @Composable
@@ -33,6 +36,17 @@ fun Juego() {
                 "drawable",
                 context.packageName
             )
+        )
+    }
+
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.tapete4),
+            contentDescription = "",
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.FillBounds
         )
     }
 
@@ -87,7 +101,6 @@ fun Juego() {
         val carta = context.resources.getIdentifier(cartaBocaAbajo, "drawable", context.packageName)
         cartaBocaArriba = carta
     }
-
 
 
 }
