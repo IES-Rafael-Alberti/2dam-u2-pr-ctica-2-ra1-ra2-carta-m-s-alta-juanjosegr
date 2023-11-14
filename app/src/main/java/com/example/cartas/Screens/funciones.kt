@@ -37,37 +37,46 @@ fun Juego() {
     }
 
     Column(
-        Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        Modifier
+            .fillMaxSize()
+            .padding(bottom = 105.dp),
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
             Image(painter = painterResource(id = cartaBocaArriba), contentDescription = "")
         }
     }
-    Row(
-        Modifier.padding(20.dp)
+
+    Column(
+        Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(
-            onClick = {
-                Baraja.barajar()
-                if (Baraja.listaCartas.size == 0) {
-                    Baraja.crearBaraja()
-                    cartaBocaAbajo = "abajo"
-                }
-                val cartaNueva = Baraja.dameCarta()
-                cartaBocaAbajo = obtenerNombreRecurso(cartaNueva)
-                println("$cartaNueva || $cartaBocaAbajo || ${Baraja.listaCartas.size}")
-            }
+        Row(
+            Modifier.padding(20.dp),
         ) {
-            Text(text = "Dame carta")
-        }
-        Button(onClick = {
-            Baraja.crearBaraja()
-            Baraja.barajar()
-            cartaBocaAbajo = "abajo"
-        }) {
-            Text(text = "Barajar")
+            Button(
+                onClick = {
+                    Baraja.barajar()
+                    if (Baraja.listaCartas.size == 0) {
+                        Baraja.crearBaraja()
+                        cartaBocaAbajo = "abajo"
+                    }
+                    val cartaNueva = Baraja.dameCarta()
+                    cartaBocaAbajo = obtenerNombreRecurso(cartaNueva)
+                    println("$cartaNueva || $cartaBocaAbajo || ${Baraja.listaCartas.size}")
+                }, modifier = Modifier.padding(end = 10.dp)
+            ) {
+                Text(text = "Dame carta")
+            }
+            Button(onClick = {
+                Baraja.crearBaraja()
+                Baraja.barajar()
+                cartaBocaAbajo = "abajo"
+            }) {
+                Text(text = "Barajar")
+            }
         }
     }
 
