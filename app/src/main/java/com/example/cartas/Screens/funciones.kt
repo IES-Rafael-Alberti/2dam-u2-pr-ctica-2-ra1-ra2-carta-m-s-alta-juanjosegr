@@ -44,7 +44,10 @@ fun Juego() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
-            Image(painter = painterResource(id = cartaBocaArriba), contentDescription = "")
+            Image(
+                painter = painterResource(id = cartaBocaArriba),
+                contentDescription = ""
+            )
         }
     }
 
@@ -84,6 +87,7 @@ fun Juego() {
         val carta = context.resources.getIdentifier(cartaBocaAbajo, "drawable", context.packageName)
         cartaBocaArriba = carta
     }
+
 
 
 }
