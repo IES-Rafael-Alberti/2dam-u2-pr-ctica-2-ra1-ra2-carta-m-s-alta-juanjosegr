@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import com.example.cartas.R
 import com.example.cartas.Screens.Baraja.Companion.obtenerNombreRecurso
@@ -83,16 +85,26 @@ fun Juego() {
                     val cartaNueva = Baraja.dameCarta()
                     cartaBocaAbajo = obtenerNombreRecurso(cartaNueva)
                     println("$cartaNueva || $cartaBocaAbajo || ${Baraja.listaCartas.size}")
-                }, modifier = Modifier.padding(end = 10.dp)
+                }, modifier = Modifier.padding(end = 10.dp),
+                colors = ButtonDefaults.textButtonColors(Color.Red)
             ) {
-                Text(text = "Dame carta")
+                Text(
+                    text = "Dame carta",
+                    color = Color.White
+                )
             }
-            Button(onClick = {
-                Baraja.crearBaraja()
-                Baraja.barajar()
-                cartaBocaAbajo = "abajo"
-            }) {
-                Text(text = "Barajar")
+            Button(
+                onClick = {
+                    Baraja.crearBaraja()
+                    Baraja.barajar()
+                    cartaBocaAbajo = "abajo"
+                },
+                colors = ButtonDefaults.textButtonColors(Color.Red)
+            ) {
+                Text(
+                    text = "Barajar",
+                    color = Color.White
+                )
             }
         }
     }
