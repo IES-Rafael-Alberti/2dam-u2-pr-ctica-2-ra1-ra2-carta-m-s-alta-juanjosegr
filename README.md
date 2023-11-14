@@ -3,28 +3,6 @@
 
 ## Práctica 2 - Carta más alta
 
-Creardos clases enumeradas con la información de los Palos y Naipes de una baraja francesa:
-
-	* Palos: CORAZONES, DIAMANTES, TREBOLES y PICAS.
-	* Napies: AS, DOS, TRES, ..., DIEZ, VALET, DAME, ROI
-
-
-Crear dos clases llamadas Carta y Baraja.
-
-- La clase Carta tendrá las siguientes propiedades:
-	
-	* nombre (Naipes)
-	* palo (Palos)
-	* puntosMin (Int)
-	* puntosMax (Int)
-	* idDrawable (Int)
-	
-	** Dejamos preparada la clase para el juego del BlackJack... solo el AS tiene dos tipos de puntuación: 1 u 11 según mejor nos convenga con el resto de cartas.
-	** idDrawable es un número que me ayudará a encontrar mi imagen en los recursos.
-
-- La clase Baraja tendrá su única propiedad y los métodos dentro de un companiion object, ya que la vamos a tratar de forma estática y no vamos a generar objetos de dicha clase:
-	
-	* listaCartas (ArrayList<Carta>)
 	
 	Métodos:
 	
