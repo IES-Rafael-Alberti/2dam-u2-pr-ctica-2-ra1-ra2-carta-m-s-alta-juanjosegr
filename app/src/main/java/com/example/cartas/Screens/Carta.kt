@@ -10,5 +10,4 @@ class Carta(
     override fun toString(): String {
         return "Carta(nombre=$nombre, palo=$palo, puntosMin=$puntosMin, puntosMax=$puntosMax, idDrawable=$idDrawable)"
     }
-
 }
